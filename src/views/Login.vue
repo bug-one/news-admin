@@ -33,6 +33,7 @@ export default {
         data: this.form,
       }).then((res) => {
         if (res.data.message == "登录成功") {
+          localStorage.setItem("token", res.data.data.token);
           this.$message({
             message: "登录成功",
             type: "success",
